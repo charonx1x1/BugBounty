@@ -1,7 +1,17 @@
-# Périmètre INTERDIT — l'exclusion l'emporte toujours sur l'inclusion.
-# Source : <url de la policy>   Dernière vérification : AAAA-MM-JJ
-#
-# Exemples (à supprimer) :
-# blog.exemple.com
-# *.corp.exemple.com
-# status.exemple.com
+# Périmètre EXCLU — TeamViewer - Bounty Program
+# Source : https://yeswehack.com/programs/teamviewer-bounty-program
+# Dernière vérification : 2026-11-11
+
+# Exclusion officielle :
+# All domains not listed In-Scope
+
+# Tout domaine non explicitement inclus dans le scope
+# du programme est exclu des tests.
+
+# Attention :
+# Les services backend directement utilisés par les
+# applications clientes TeamViewer Remote sont
+# également couverts selon la politique officielle.
+
+# Les services tiers et les autres sous-domaines
+# ne doivent pas être testés sans autorisation.

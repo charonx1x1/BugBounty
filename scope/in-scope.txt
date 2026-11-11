@@ -1,34 +1,22 @@
-
-# Périmètre AUTORISÉ — TeamViewer - Bounty Program
+# Programme : TeamViewer - Bounty Program
 # Source : https://yeswehack.com/programs/teamviewer-bounty-program
-# Dernière vérification : 2026-11-11
+# Vérification : 2026-11-11
+
+# Applications web explicitement autorisées
+web.teamviewer.com
+account.teamviewer.com
+login.teamviewer.com
+
+# Autres applications officiellement incluses dans le programme :
+# TeamViewer Remote desktop client
+# TeamViewer Remote Control (Android / iOS)
+# TeamViewer QuickSupport (Android / iOS)
+# TeamViewer Host (Android)
 #
-# Programme : TeamViewer Remote
-# 9 entrées officiellement in-scope
-
-# Applications Web
-https://web.teamviewer.com
-https://account.teamviewer.com
-https://login.teamviewer.com
-
-# Application Desktop : TeamViewer Remote Client
-# URL de téléchargement, pas autorisation de scanner tout le domaine
-https://www.teamviewer.com/en/products/teamviewer/
-
-# Applications Android
-https://play.google.com/store/apps/details?id=com.teamviewer.teamviewer.market.mobile&hl=en&gl=US
-https://play.google.com/store/apps/details?id=com.teamviewer.quicksupport.market&hl=en&gl=US
-https://play.google.com/store/apps/details?id=com.teamviewer.host.market&hl=en&gl=US
-
-# Applications iOS
-https://apps.apple.com/de/app/teamviewer-remote-control/id692035811
-https://apps.apple.com/de/app/teamviewer-quicksupport/id661649585
-
-# Remarques
-# Les services backend directement utilisés par les clients
-# sont également couverts selon la politique officielle.
-# Leur appartenance au scope doit être vérifiée avant tout test.
+# Les applications mobiles et desktop sont documentées
+# dans la politique officielle, mais ne sont pas ajoutées
+# comme domaines web autorisés dans ce fichier.
 #
-#
-#
-# Aucun autre domaine n'est autorisé par défaut.
+# Certains services backend directement utilisés par les
+# clients sont couverts selon la politique officielle.
+# Vérifier leur appartenance au scope avant tout test.

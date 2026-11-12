@@ -50,3 +50,40 @@
 ## Écarté (et pourquoi)
 
 - <endpoint> : <raison — évite de le retester dans un mois>
+
+## Cartographie de l'authentification
+
+### Application
+- Application web pilotée par JavaScript (SPA probable).
+- Service de connexion : account.teamviewer.com.
+- Retour prévu vers /authenticate/withtoken.
+
+### API observée
+Endpoint : GET /api/account/v1/account
+
+Avant authentification :
+- HTTP 401 Unauthorized
+- Corps vide
+- En-tête Tv-Wps-Api-Auth-Failure observé
+
+Après authentification :
+- HTTP 200 OK
+- Réponse JSON contenant les informations du compte.
+
+### Structure JSON observée
+- accountId : identifiant numérique
+- profile : informations et préférences
+- accountCompanyInfo : appartenance à une entreprise
+- effectiveLicenseFeatures : fonctionnalités de licence
+- loginType : type de connexion
+- accountType : type de compte
+
+### Hypothèses à étudier
+- Vérification des contrôles d'accès aux ressources.
+- Compréhension du mécanisme de session.
+
+### Conclusion provisoire
+L'API exige une authentification valide pour
+retourner les informations du compte.
+
+Aucune vulnérabilité confirmée à ce stade.

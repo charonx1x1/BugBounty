@@ -55,3 +55,12 @@
 **Prochaine étape**
 - Identifier une fonctionnalité accessible permettant
   d'étudier les contrôles d'accès entre comptes de test.
+
+### Mise à jour — Invitations entre comptes
+
+- L'envoi d'une invitation entre les comptes de test
+  fonctionne désormais.
+- L'erreur HTTP 500 observée précédemment
+  ne s'est pas reproduite lors du dernier essai.
+- La réception et l'acceptation de l'invitation
+  restent à vérifier.

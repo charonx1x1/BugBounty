@@ -11,11 +11,12 @@
 
 | Couche | Détail |
 |---|---|
-| Serveur | |
-| Framework | |
-| CDN / WAF | |
-| Auth | <session, JWT, OAuth, SAML> |
-| API | <REST, GraphQL, gRPC> |
+| Serveur | Non identifié |
+| Framework | SPA JavaScript probable, framework non identifié |
+| CDN / WAF | En-tête X-Azure-Ref observé, infrastructure exacte non confirmée |
+| Auth | Connexion via account.teamviewer.com, retour /authenticate/withtoken |
+| API | Endpoints HTTP JSON de type REST, notamment /api/account/v1/ et /api/manageddevices/v2/ |
+
 
 ## Comptes de test
 

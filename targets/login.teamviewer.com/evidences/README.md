@@ -51,3 +51,9 @@ L’effet sur le profil est décrit séparément dans le [relevé expurgé](comp
 ### Captures complémentaires
 
 [Relevés sqlmap et Wayback Machine](sqlmap-wayback/README.md).
+
+### Recherche de paramètres avec Arjun
+
+![Sortie Arjun 2.2.7 avec six noms extraits et aucun paramètre découvert](arjun-resultat.png)
+
+*Arjun a extrait six noms candidats depuis la réponse. Le résultat final ne confirme aucun paramètre caché. Voir la [note d’analyse](../notes/recherche-parametres-arjun.md).*

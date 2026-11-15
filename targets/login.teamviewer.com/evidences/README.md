@@ -40,16 +40,10 @@ Les réponses HTTP des essais Burp et l’effet sur le profil figurent dans le [
 
 [Capture de configuration de Burp](burp-conditions-expurge.png).
 
-### Historique HTTP et état visible du profil
+### Sauvegarde normale dans Burp
 
-![Historique Burp avec la sauvegarde normale sélectionnée](figure-07-burp-historique.png)
+![Ligne sélectionnée dans l’historique Burp et corps de sa réponse](figure-07-burp-sauvegarde-response.png)
 
-*Figure 7 – Historique Burp d’une sauvegarde normale. La ligne sélectionnée identifie le POST de mise à jour du profil et le statut HTTP 200. Cette capture précède les essais des figures 1 et 2.*
+*Figure 7 – Deux extraits de la même capture Burp. En haut, le POST de sauvegarde du profil sélectionné affiche HTTP 200. En bas, sa réponse contient « Une erreur non spécifiée est survenue ». Le panneau de requête contenant les cookies a été écarté.*
 
-![Nom temporaire affiché dans TeamViewer](figure-08-profil-reference.png)
-
-*Figure 8 – Première série, nom temporaire « Projet test A » affiché après le contrôle de référence.*
-
-![Nom initial affiché après le refus de la première série](figure-09-profil-apres-refus.png)
-
-*Figure 9 – Première série, nom initial « Projet test » affiché après le refus observé avec un jeton invalide. Ces deux captures du nom illustrent la première série. Les figures 1 et 2 concernent la seconde.*
+L’effet sur le profil est décrit séparément dans le [relevé expurgé](comparaison-profil.md).

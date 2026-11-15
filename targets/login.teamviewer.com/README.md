@@ -2,6 +2,14 @@
 
 L’enquête porte sur la connexion à `login.teamviewer.com`, la récupération du compte, la gestion des sessions et la sauvegarde du profil. Les étapes ci-dessous relient chaque question aux fiches et aux captures correspondantes.
 
+## Résultats principaux
+
+| Parcours | Résultat | Preuve |
+| --- | --- | --- |
+| Sauvegarde du profil | Le nom est resté inchangé lors des refus HTTP 403. Le changement est apparu dans l’interface lors du contrôle positif, malgré le message d’erreur accompagnant le HTTP 200. | [Comparaison et captures](evidences/README.md#3-comparaison-dans-burp) |
+| Révocation d’une session | Après la révocation, Safari est revenu à la page de connexion. Chrome est resté connecté. | [Relevé de l’essai](notes/gestion-sessions.md) |
+| Récupération du compte | Le courriel de récupération a été reçu et l’interface a confirmé la réinitialisation du mot de passe. | [Journal de bord](notes/journal.md#réinitialisation-et-réouverture-du-lien) |
+
 ## 1. Périmètre et repérage
 
 - [Fiche cible](fiche-cible.md) — périmètre, compte de test et parcours visibles.
@@ -26,7 +34,7 @@ La [fiche Arjun](notes/recherche-parametres-arjun.md) distingue les noms candida
 
 ## 5. Bilan
 
-Les observations documentent un contrôle du jeton lors de la sauvegarde du profil. Aucune vulnérabilité n’a été confirmée sur les parcours étudiés. Le [bilan des vérifications](notes/cookies-et-bilan.md) précise la portée des observations sur les cookies et le profil.
+La comparaison du profil associe chaque réponse HTTP à un état visible du compte. L’essai de révocation compare deux sessions ouvertes en parallèle. Le [bilan des vérifications](notes/cookies-et-bilan.md) réunit les résultats et les questions encore ouvertes. Aucune vulnérabilité n’a été confirmée.
 
 [Journal de bord](notes/journal.md) · [Couverture de l’enquête](notes/prochaines-etapes.md) · [Exercice Burp sur une réponse fictive](notes/exercice-response-manipulation.md)
 

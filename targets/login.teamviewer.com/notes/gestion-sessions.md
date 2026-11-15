@@ -26,17 +26,9 @@ Vérifier qu'une session révoquée ne permet plus d'accéder à une page proté
 
 ## Résultat
 
-La révocation de Safari empêche son accès direct à la page protégée après actualisation.
+Après la révocation, Safari a été redirigé vers la page de connexion à l’actualisation de la page protégée. Chrome est resté authentifié. La révocation a donc produit l’effet attendu sur les deux sessions observées.
 
-La session Chrome reste authentifiée.
-
-## Conclusion
-
-Aucun défaut de révocation ou d'isolation des sessions n'a été observé dans le scénario testé.
-
-## Limites
-
-Le contrôle ne démontre pas l'invalidation de tous les jetons ni le comportement de l'ensemble des endpoints.
+Le scénario vérifie l’accès à la page protégée utilisée pendant l’essai. Le comportement des autres routes et jetons reste indéterminé.
 
 ## Preuves
 

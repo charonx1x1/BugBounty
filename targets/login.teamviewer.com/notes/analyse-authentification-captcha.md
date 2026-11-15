@@ -1,7 +1,6 @@
 # TEST-AUTH-CAPTCHA-01 — Analyse passive des réponses d'authentification
 
 **Cible :** `https://login.teamviewer.com`  
-**Date des captures :** 14 novembre 2026  
 **Méthode :** comparaison de réponses déjà observées dans Burp Suite Community Edition  
 **État :** non concluant — aucune vulnérabilité démontrée
 
@@ -45,7 +44,7 @@ La comparaison repose sur des requêtes historiques de contextes différents, po
 
 ## Observation complémentaire — Rejet explicite du CAPTCHA
 
-Dans une autre réponse déjà capturée le **14 novembre 2026**, la route `POST /LogOn/Authenticate` renvoie **HTTP 200** avec `"s":0`, un champ `err.CaptchaError` et le message « Cochez la case pour prouver que vous êtes un être humain. » Le champ `"c":true` est également présent, sans signification interne établie.
+Dans une autre réponse déjà capturée, la route `POST /LogOn/Authenticate` renvoie **HTTP 200** avec `"s":0`, un champ `err.CaptchaError` et le message « Cochez la case pour prouver que vous êtes un être humain. » Le champ `"c":true` est également présent, sans signification interne établie.
 
 **Interprétation :** cette tentative a été rejetée avec un motif lié au CAPTCHA. La présence d'un jeton dans la requête ne démontre pas sa validation. Cette réponse ne prouve ni l'ordre dans lequel le serveur effectue ses vérifications, ni un contournement du CAPTCHA, du SSO ou des identifiants.
 

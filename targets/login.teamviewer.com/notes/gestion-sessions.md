@@ -1,7 +1,6 @@
 # TEST-SESSION-01 — Révocation et isolation des sessions
 
 **Cible :** login.teamviewer.com
-**Date :** 14 novembre 2026
 **Catégorie :** Gestion des sessions
 **Verdict :** Conforme pour le scénario testé
 

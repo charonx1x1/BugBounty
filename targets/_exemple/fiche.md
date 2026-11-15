@@ -1,7 +1,7 @@
 # Fiche cible — app.exemple.com   (EXEMPLE — dossier de référence, ne pas tester)
 
 - **Programme** : Exemple SA — https://exemple.com/.well-known/security.txt
-- **Dans le périmètre** : oui (vérifié le 2026-09-10)
+- **Dans le périmètre** : oui
 - **Débit autorisé** : 5 req/s
 - **En-tête d'identification exigé** : `X-Bug-Bounty: mon-pseudo`
 
@@ -47,4 +47,4 @@
 
 ## Écarté (et pourquoi)
 
-- Reset de mot de passe : token robuste, testé le 2026-09-10, inutile d'y revenir.
+- Reset de mot de passe : token robuste, testé, inutile d'y revenir.

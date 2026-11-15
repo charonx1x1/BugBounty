@@ -1,7 +1,6 @@
 # EXERCICE-RESPONSE-01 — Manipulation d'une réponse HTTP fictive dans Burp Suite
 
 **Contexte du projet :** audit pédagogique TeamViewer  
-**Date :** 14 novembre 2026  
 **Outil :** Burp Suite Community Edition 2026.10.1  
 **Nature :** démonstration hors trafic réel, dans l'éditeur `Proxy > Match and replace > Add > Test`  
 **Statut :** configuration observée ; résultat du bouton `Test` non confirmé sur la dernière capture

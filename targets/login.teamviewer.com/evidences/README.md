@@ -1,6 +1,6 @@
 # TeamViewer — parcours de lecture des preuves
 
-Ce dossier suit la démarche d’enquête. Les dates des essais figurent dans le [journal](../notes/journal.md). Les captures ont été recadrées et les données sensibles masquées.
+Ce dossier suit la démarche d’enquête. Les captures ont été recadrées et les données sensibles masquées.
 
 1. [Repérer la cible et ses archives](#1-repérage-et-archives)
 2. [Observer la récupération et la session](#2-récupération-et-session)

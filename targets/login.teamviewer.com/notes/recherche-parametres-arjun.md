@@ -1,6 +1,5 @@
 # Recherche de paramètres cachés avec Arjun — TeamViewer
 
-**Date :** 15 novembre 2026  
 **Cible :** `https://login.teamviewer.com/LogOn/Authenticate`  
 **Outil :** Arjun 2.2.7  
 **Statut :** aucun paramètre caché confirmé

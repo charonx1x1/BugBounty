@@ -1,7 +1,6 @@
 # TEST-COOKIE-01 — Attributs de sécurité des cookies TeamViewer
 
 **Cible :** `https://login.teamviewer.com`  
-**Date d'observation :** 14 novembre 2026  
 **Source :** réponse HTTP déjà capturée dans Burp Suite Community Edition, `POST /LogOn/Authenticate`  
 **Nature :** analyse passive des en-têtes `Set-Cookie`
 
@@ -13,8 +12,8 @@ Examiner les protections déclarées des cookies émis lors d'une authentificati
 
 | Nom du cookie | Secure | HttpOnly | SameSite explicite | Domain explicite | Path | Expiration explicite |
 | --- | --- | --- | --- | --- | --- | --- |
-| `.ASPXAUTH` | Oui | Oui | Strict | Non | `/` | 16 novembre 2026 à 14:11:20 GMT |
-| `ELT` | Oui | Oui | Non | Non | `/` | 16 novembre 2026 à 14:11:20 GMT |
+| `.ASPXAUTH` | Oui | Oui | Strict | Non | `/` | Oui |
+| `ELT` | Oui | Oui | Non | Non | `/` | Oui |
 | `LogOnType` | Oui | Non | Non | Non | `/` | Non observée |
 | `__xFlUD3rsEr4sd` | Oui | Oui | Non | Non | `/` | Non observée |
 

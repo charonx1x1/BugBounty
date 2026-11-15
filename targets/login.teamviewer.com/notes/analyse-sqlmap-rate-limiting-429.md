@@ -1,6 +1,5 @@
 # Investigation SQLi — Authentification TeamViewer
 
-**Date :** 14 novembre 2026  
 **Cible :** `https://login.teamviewer.com/LogOn/Authenticate`  
 **Méthode :** POST, JSON  
 **Paramètre étudié :** `UserName`  
@@ -110,4 +109,4 @@ Je classe donc ce résultat comme **investigation SQLi non concluante quant à l
 - J'ai volontairement supprimé de cette documentation toutes les valeurs d'authentification et de session.
 - Pour toute réutilisation ou publication de captures, je masque les identifiants, mots de passe, cookies et jetons.
 
-**Source de preuve :** sorties terminal de mes scans du 14 novembre 2026, recopiées et expurgées ci-dessus.
+**Source de preuve :** sorties terminal de mes scans, recopiées et expurgées ci-dessus.

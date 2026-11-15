@@ -1,6 +1,5 @@
 # Étape 6 — Recherche d'URL et paramètres historiques avec Wayback Machine
 
-**Date de l'analyse :** 15 novembre 2026  
 **Cible étudiée :** écosystème web TeamViewer, avec distinction entre les sous-domaines `login.teamviewer.com`, `account.teamviewer.com` et `www.teamviewer.com`  
 **Technique :** reconnaissance passive à partir de l'API CDX de l'Internet Archive  
 **Résultat :** trois noms de paramètres GET historiques identifiés dans l'échantillon de `www.teamviewer.com` ; aucun paramètre de connexion confirmé
@@ -26,7 +25,7 @@ curl -sS -G "https://web.archive.org/cdx/search/cdx" \
   -o wayback_teamviewer_www.json
 ```
 
-J'ai ensuite utilisé Python (`urllib.parse.urlsplit` et `parse_qsl`) pour extraire les chemins, les noms des paramètres GET et leur fréquence, puis relever leurs domaines, chemins et dates de capture. Je n'ai pas conservé les valeurs des paramètres dans cette fiche.
+J'ai ensuite utilisé Python (`urllib.parse.urlsplit` et `parse_qsl`) pour extraire les chemins, les noms des paramètres GET et leur fréquence, puis relever leurs domaines, chemins. Je n'ai pas conservé les valeurs des paramètres dans cette fiche.
 
 ## 3. Résultats par sous-domaine
 
@@ -42,30 +41,27 @@ Sur les 500 URL retournées pour `www.teamviewer.com`, j'ai recensé **298 chemi
 
 ## 4. Paramètres GET trouvés
 
-| Paramètre | Occurrences dans l'échantillon | Date(s) et chemin(s) observés | Interprétation |
+| Paramètre | Occurrences dans l'échantillon | Chemins observés | Interprétation |
 | --- | ---: | --- | --- |
-| `dpl` | 257 | 3–4 novembre 2026, principalement `/_next/static/chunks/*.js` | Paramètre d'URL associé à des ressources JavaScript statiques ; fonction exacte non établie |
-| `aspxerrorpath` | 2 | 17 et 23 juillet 2013, `/404.aspx` | Nom compatible avec un mécanisme historique de page d'erreur ASP.NET |
-| `pid` | 1 | 30 avril 2010, `/` | Paramètre historique dont le rôle est inconnu |
+| `dpl` | 257 | Principalement `/_next/static/chunks/*.js` | Paramètre d'URL associé à des ressources JavaScript statiques ; fonction exacte non établie |
+| `aspxerrorpath` | 2 | `/404.aspx` | Nom compatible avec un mécanisme historique de page d'erreur ASP.NET |
+| `pid` | 1 | `/` | Paramètre historique dont le rôle est inconnu |
 
 ### Exemples de preuves extraites
 
 ```text
 PARAMÈTRE : dpl
 Occurrences : 257
-Date : 20261104092243
 Domaine : www.teamviewer.com
 Chemin : /_next/static/chunks/0-rbp631lk9rz.js
 
 PARAMÈTRE : aspxerrorpath
 Occurrences : 2
-Date : 20130723134836
 Domaine : www.teamviewer.com
 Chemin : /404.aspx
 
 PARAMÈTRE : pid
 Occurrences : 1
-Date : 20100430081815
 Domaine : www.teamviewer.com:80
 Chemin : /
 ```
@@ -88,4 +84,4 @@ J'ai réalisé une recherche passive avec Wayback Machine sur trois domaines Tea
 
 **Je n'ai identifié aucun paramètre historique directement relié au point d'authentification `/LogOn/Authenticate`, ni aucune vulnérabilité exploitable.** Ce travail constitue une cartographie historique et non une preuve de faille.
 
-**Preuve :** sorties de l'API CDX et résultats d'extraction Python reproduits ci-dessus. Les dates sont celles des captures d'archives, pas nécessairement les dates de création des pages.
+**Preuve :** sorties de l'API CDX et résultats d'extraction Python reproduits ci-dessus.

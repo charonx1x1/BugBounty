@@ -20,7 +20,7 @@ Chaque vérification aura un objectif, des conditions de départ, un résultat a
 | --- | --- |
 | Executive Summary | Résultats et limites, à rédiger une fois les essais terminés |
 | Analyse du programme BBP | Périmètre, règles, récompenses, sources et analyse du cadre légal à compléter |
-| Méthodologie et timeline | Dates, choix et actions issus du journal |
+| Méthodologie | Choix et actions issus du journal |
 | Résultats techniques | Scénarios exécutés et défenses observées pour les CWE choisies |
 | Impact business | Conséquences étayées des constats, hypothèses explicitement signalées |
 | Feuille de route de remédiation | Mesures reliées aux constats et à leur priorité |

@@ -47,3 +47,7 @@ Les réponses HTTP des essais Burp et l’effet sur le profil figurent dans le [
 *Figure 7 – Deux extraits de la même capture Burp. En haut, le POST de sauvegarde du profil sélectionné affiche HTTP 200. En bas, sa réponse contient « Une erreur non spécifiée est survenue ». Le panneau de requête contenant les cookies a été écarté.*
 
 L’effet sur le profil est décrit séparément dans le [relevé expurgé](comparaison-profil.md).
+
+### Captures complémentaires
+
+[Relevés sqlmap et Wayback Machine](sqlmap-wayback/README.md).

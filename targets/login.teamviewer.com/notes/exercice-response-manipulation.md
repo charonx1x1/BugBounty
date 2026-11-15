@@ -9,7 +9,7 @@
 
 Comprendre la modification locale d'un corps de réponse HTTP dans Burp Suite, sans modifier une session réelle, contourner un CAPTCHA ni envoyer de nouvelles requêtes à TeamViewer.
 
-## Configuration observée (capture utilisateur)
+## Configuration visible dans la capture
 
 | Paramètre | Valeur |
 | --- | --- |
@@ -38,13 +38,6 @@ La capture montre encore le message original dans le panneau **Auto-modified res
 ```
 
 Seul le message `m` doit changer. Le champ `s:0` continue d'indiquer un refus applicatif. La vérification effective de ce résultat reste à effectuer ou à documenter par une capture supplémentaire.
-
-## Procédure de vérification locale
-
-1. Ouvrir `Proxy > Match and replace > Add`.
-2. Sélectionner `Response body`, saisir les champs ci-dessus et coller la réponse fictive.
-3. Cliquer sur `Test` puis comparer les panneaux `Original response` et `Auto-modified response`.
-4. Cliquer sur `Cancel` pour ne pas activer la règle sur le trafic réel.
 
 ## Interprétation et limites
 

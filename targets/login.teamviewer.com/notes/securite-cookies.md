@@ -31,10 +31,8 @@ Les noms et attributs sont relevés dans une réponse précise, sans supposer qu
 
 **Aucune vulnérabilité confirmée dans ce contrôle.** La configuration observée offre plusieurs protections utiles. Les attributs non explicites constituent des observations et ne prouvent ni contournement d'authentification ni faille CSRF.
 
-## Limites et suites possibles
+## Limites
 
 - Une seule réponse HTTP analysée ; aucune vérification exhaustive de toutes les routes et sessions.
 - Le rôle exact de chaque cookie n'est pas entièrement établi.
 - Une évaluation du risque CSRF nécessite d'autres éléments que l'attribut `SameSite` seul ; un contrôle CSRF distinct du projet n'avait pas démontré de contournement.
-- Conserver les preuves uniquement sous forme expurgée ; ne jamais committer les valeurs `Cookie`, `Set-Cookie`, jetons SSO, CAPTCHA ou mots de passe.
-- Révoquer les sessions dont les secrets ont été exposés lors du travail.

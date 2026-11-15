@@ -22,10 +22,6 @@ La requête de l’essai n’était plus disponible dans le panneau Réseau apr�
 
 L’absence de changement du nom ne prouve pas un refus puisque le corps demandait déjà ce même nom. La navigation ne prouve ni une acceptation ni un rejet. Aucune vulnérabilité et aucune validation effective du jeton ne sont démontrées par cet essai.
 
-## Amélioration nécessaire avant un nouvel essai
-
-Conserver les requêtes à travers les navigations et vérifier que cette option fonctionne. Utiliser un nom de test distinct et réversible, confirmer l’en-tête effectivement transmis, puis relever le statut HTTP, le résultat applicatif et le nom réellement enregistré après rechargement. Rétablir le nom initial et supprimer toute substitution locale à la fin. Ne pas publier de HAR brut contenant les cookies ou jetons.
-
 ## Reprise avec conservation du réseau
 
 Après reconnexion, une sauvegarde normale a été capturée et retrouvée avec le filtre `UpdateProfile`. Une substitution locale a ensuite été configurée avec `test-invalide` et l’option « Inclure les données de la requête d’origine » cochée. Le formulaire portait le nom temporaire « Projet test controle ». Une seule sauvegarde de contrôle a été déclenchée.

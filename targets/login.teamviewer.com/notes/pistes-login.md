@@ -18,36 +18,6 @@
 
 
 
-## Priorité 1 — Session active et navigateur de confiance
-
-TeamViewer Classic documente une confiance distincte par navigateur pour la console. La confiance concerne les connexions futures. Une session active concerne un accès déjà ouvert. Le journal de révocation fourni décrit le retour de Safari à la connexion pendant que Chrome reste connecté. Il reste à identifier la commande utilisée dans les captures pour attribuer correctement le résultat.
-
-- [ ] Associer une capture expurgée au menu utilisé : « Connexions actives » ou « Appareils de confiance ».
-- [ ] Associer les états des deux navigateurs au même scénario et préciser si le délai de révocation a été mesuré.
-- [ ] Noter séparément le verdict sur la session ouverte et le verdict sur la confiance du navigateur. Laisser le second indéterminé si aucune preuve ne le couvre.
-
-[Documentation TeamViewer Classic sur les appareils de confiance](https://www.teamviewer.com/en/global/support/knowledge-base/teamviewer-classic/security/trusted-devices/trusted-devices/)
-
-## Priorité 2 — MFA du compte et dépendance à la messagerie
-
-TeamViewer présente la MFA du compte comme une alternative au mécanisme d’autorisation des nouveaux appareils par e-mail. Cela change le rôle de la messagerie dans le parcours de connexion. Les notes du projet documentent l’activation du compte par e-mail et les options visibles dans la console. Elles ne démontrent pas quelle politique s’applique à chaque nouvelle connexion.
-
-- [ ] Construire un tableau des parcours : activation du compte, connexion sur un nouveau navigateur, récupération du mot de passe et récupération MFA.
-- [ ] Pour chaque parcours, indiquer le facteur attendu d’après la documentation, le signal réellement observé et le verdict.
-- [ ] Marquer « documenté par le fournisseur » pour les contrôles MFA sans preuve issue du compte de test.
-
-[Documentation TeamViewer sur la MFA du compte](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/account/two-factor-authentication-for-your-account/)
-
-## Priorité 3 — Attribuer les protections à la bonne réponse
-
-Le relevé HTTP local contient X-Frame-Options: SAMEORIGIN pour la sauvegarde du profil. Cette preuve concerne cette réponse précise. La page de connexion et la réponse de récupération doivent avoir leur propre relevé.
-
-- [ ] Dans les captures existantes, retrouver la réponse du document de connexion et distinguer ses éventuelles redirections.
-- [ ] Relever, si visibles, HSTS, Cache-Control, Referrer-Policy et les directives d’encadrement. Associer chaque en-tête au chemin exact et au statut.
-- [ ] Indiquer « non observé sur cette preuve » si l’en-tête ou la réponse n’est pas disponible. Ne déduire aucune faille de la seule absence d’un en-tête.
-
-[Relevé HTTP initial](observation-http-profil.md) · [Journal du parcours de récupération](journal.md)
-
 ## Résultats de la revue
 
 **Révocation.** La [note publiée](https://github.com/Nadadana1/BugBounty/blob/main/targets/login.teamviewer.com/notes/gestion-sessions.md) décrit une action sur la liste des connexions actives : six entrées avant, cinq après, puis Safari redirigé vers la connexion et Chrome toujours authentifié. Cela étaye un verdict de révocation ciblée rapporté. Le délai, les captures sources et le statut de confiance du navigateur ne sont pas établis par cette note.

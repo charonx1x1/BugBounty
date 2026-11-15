@@ -2,7 +2,7 @@
 
 ## Relevé dans Safari
 
-Lecture du panneau Stockage > Cookies pour `login.teamviewer.com`, avec le compte A connecté. Aucun cookie modifié ou supprimé. Les valeurs sont exclues de ce document.
+J’ai consulté le panneau Stockage > Cookies pour `login.teamviewer.com`, avec le compte A connecté. Aucun cookie modifié ou supprimé. Les valeurs sont exclues de ce document.
 
 | Nom | Domaine affiché | Chemin | Durée affichée | Secure | HttpOnly | SameSite affiché |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -16,7 +16,7 @@ Le nom `.ASPXAUTH` suggère un rôle d’authentification ; ce rôle n’a pas �
 
 Secure limite la transmission du cookie à HTTPS ; HttpOnly empêche sa lecture via les API JavaScript habituelles, mais ne bloque pas l’envoi du cookie par les requêtes JavaScript. SameSite=Strict limite son envoi aux requêtes provenant du même site. « Même site » ne signifie pas « même origine ». Ces propriétés constituent des défenses observées, pas une preuve générale d’absence de CSRF ou de XSS. Référence : [MDN — Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie).
 
-## Bilan utilisable dans le rapport
+## Bilan
 
 | Vérification | Résultat observé | Conclusion et limite |
 | --- | --- | --- |
@@ -33,9 +33,9 @@ Les premiers essais Safari étaient non concluants. La [comparaison manuelle ult
 
 Aucune vulnérabilité confirmée. Aucun score CVSS ni impact business de compromission ne peut être attribué à ces seuls constats.
 
-## Suite ciblée
+## Limites du contrôle
 
-Intégrer ce contrôle et ses limites au rapport. Un seul scénario a été vérifié sur la sauvegarde du profil ; il ne permet pas de généraliser aux autres actions. Les contrôles entre comptes et les scénarios depuis une origine tierce restent non réalisés. Toute suite devra correspondre à un objectif distinct, rester dans le périmètre et tenir compte des exclusions du programme.
+Un seul scénario a été vérifié sur la sauvegarde du profil ; il ne permet pas de généraliser aux autres actions. Les contrôles entre comptes et les scénarios depuis une origine tierce restent non réalisés.
 
 ## Dernier état observé
 

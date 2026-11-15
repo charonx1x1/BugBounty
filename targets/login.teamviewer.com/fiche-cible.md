@@ -22,7 +22,7 @@ Les CSRF de faible gravité sur la connexion, l’énumération d’utilisateurs
 
 ## Comptes de test
 
-Un compte de test gratuit, désigné « compte A », a été créé et activé. Les valeurs des mots de passe, cookies, jetons et liens de récupération sont exclues du dépôt.
+J’ai créé et activé un compte de test gratuit, désigné « compte A ». Les valeurs des mots de passe, cookies, jetons et liens de récupération sont exclues du dépôt.
 
 ## Surface observée
 
@@ -36,12 +36,6 @@ Un compte de test gratuit, désigné « compte A », a été créé et activé. 
 | Langue | Français affiché | Sélecteur visible |
 
 Les liens `#lost-password` et `#register` donnent accès à des parties de l’interface. Les requêtes envoyées au serveur restent à examiner pour comprendre le fonctionnement de ces parcours.
-
-## Pistes à creuser
-
-- Identifier les parcours disponibles et leurs domaines de destination.
-- Noter les protections rencontrées avec un compte de test.
-- Choisir les deux ou trois CWE avec le groupe.
 
 ## État des vérifications
 

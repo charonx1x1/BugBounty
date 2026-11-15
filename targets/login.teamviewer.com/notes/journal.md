@@ -2,7 +2,7 @@
 
 ## Préparation et premières observations
 
-Cette première étape porte sur les documents du projet et la page `https://login.teamviewer.com/LogOn` dans un navigateur, sans authentification.
+J’ai commencé par les documents du projet et la page `https://login.teamviewer.com/LogOn`, accessible avant connexion.
 
 ### Avancement
 

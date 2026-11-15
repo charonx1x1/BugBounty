@@ -57,6 +57,5 @@ J'ai exécuté Arjun 2.2.7 sur `/LogOn/Authenticate`. L'outil a proposé six nom
 
 La comparaison avec mes observations précédentes montre deux correspondances littérales dans les données du JWT de challenge (`policyRuleHash`, `method`) et plusieurs similitudes non confirmées. **Aucune vulnérabilité exploitable n'a été démontrée.**
 
-**Étape documentaire restante :** examiner hors ligne la réponse HTTP 403 déjà enregistrée dans Burp Suite, rechercher les six noms dans son corps et noter les correspondances exactes avant de conclure sur leur provenance.
 
 **Preuve conservée :** sortie du terminal Arjun fournie lors de l'investigation. Aucun cookie, mot de passe ni jeton de session n'est reproduit dans cette fiche.

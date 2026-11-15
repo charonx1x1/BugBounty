@@ -16,7 +16,7 @@ L’enquête porte sur la connexion à `login.teamviewer.com`, la récupération
 
 ## 3. Sauvegarde du profil
 
-Lire le [relevé HTTP](notes/observation-http-profil.md), puis la [comparaison des essais](evidences/comparaison-profil.md). Les essais avec jeton absent ou invalide ont renvoyé HTTP 403 avec un nom inchangé. Le contrôle positif a renvoyé HTTP 200 avec un message générique d’erreur. L’interface a affiché le changement de nom. [Voir les figures 4 à 8](evidences/README.md#3-comparaison-dans-burp).
+Le [relevé HTTP](notes/observation-http-profil.md) décrit la sauvegarde normale. La [comparaison des essais](evidences/comparaison-profil.md) présente les réponses et l’état du profil. Les essais avec jeton absent ou invalide ont renvoyé HTTP 403 avec un nom inchangé. Le contrôle positif a renvoyé HTTP 200 avec un message générique d’erreur. L’interface a affiché le changement de nom. [Voir les figures 4 à 8](evidences/README.md#3-comparaison-dans-burp).
 
 [Fiche détaillée sur le jeton invalide](notes/essai-jeton-invalide.md)
 
@@ -28,6 +28,6 @@ La [fiche Arjun](notes/recherche-parametres-arjun.md) distingue les noms candida
 
 Les observations documentent un contrôle du jeton lors de la sauvegarde du profil. Aucune vulnérabilité n’a été confirmée sur les parcours étudiés. Le [bilan des vérifications](notes/cookies-et-bilan.md) précise la portée des observations sur les cookies et le profil.
 
-[Journal de bord](notes/journal.md) · [Prochaines vérifications](notes/prochaines-etapes.md) · [Exercice Burp sur une réponse fictive](notes/exercice-response-manipulation.md)
+[Journal de bord](notes/journal.md) · [Couverture de l’enquête](notes/prochaines-etapes.md) · [Exercice Burp sur une réponse fictive](notes/exercice-response-manipulation.md)
 
 [Voir toutes les captures dans l’ordre](evidences/README.md)

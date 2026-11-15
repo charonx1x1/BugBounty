@@ -2,7 +2,7 @@
 
 ## Question
 
-Le titulaire est-il averti après un changement de mot de passe effectué via le parcours de récupération ? Une notification distincte peut aider à détecter une modification inattendue.
+J’ai examiné les éléments du parcours de récupération pour savoir si le compte recevait un courriel distinct après le changement de mot de passe.
 
 ## Analyse des preuves existantes
 

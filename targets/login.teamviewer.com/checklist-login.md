@@ -74,17 +74,6 @@ Ce scénario porte sur la sauvegarde du profil. Le contrôle CSRF de la connexio
 - [ ] **LG-07 et LG-08 — Référentiel attendu.** Relever les garanties documentées par le fournisseur et les conditions qui les rendent applicables au compte de test.
 - [ ] **Traçabilité.** Pour chaque ligne reprise dans le rapport, noter la preuve, le navigateur, l’état initial, l’état final, les autres explications plausibles et la portée du verdict.
 
-## Priorités pour le jury
-
-| Priorité | Travail restant | Raison |
-| --- | --- | --- |
-| P1 | Rapprocher les preuves de révocation de la note existante | Distinguer une redirection d’interface d’une révocation dont la portée est documentée |
-| P1 | Confirmer la remise en état du compte et la déconnexion | La dernière preuve du contrôle positif montre le nom temporaire |
-| P2 | Comparer la documentation produit aux observations de connexion et de récupération | Définir clairement les garanties attendues et les points ouverts |
-| P2 | Proposer des critères internes pour l’expiration, l’usage unique et la révocation | Transformer les questions ouvertes en attentes vérifiables par l’équipe produit |
-
-Impact observé sur le profil : une modification réversible du nom sur le compte de test. Aucune prise de contrôle ni exposition de données n’a été démontrée. La qualité des conclusions repose sur le contrôle positif, la vérification de l’état métier et la séparation des verdicts par parcours.
-
 ## Réponse publique du formulaire et dépendances
 
 - [x] Associer les en-têtes au document `/LogOn` affiché dans Safari (HTTP 200). HSTS, CSP, SAMEORIGIN, nosniff, Referrer-Policy et no-cache/no-store sont observés.

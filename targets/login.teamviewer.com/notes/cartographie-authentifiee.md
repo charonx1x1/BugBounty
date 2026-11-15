@@ -32,10 +32,3 @@ Un dialogue « Unsaved changes » est apparu en quittant les réglages de profil
 ## Résultat et limites
 
 Aucune vulnérabilité confirmée. Cette étape fournit un inventaire des fonctions accessibles et des restrictions affichées. Elle ne valide ni les protections CSRF, ni les contrôles d’accès côté serveur, ni la robustesse de l’authentification. Les observations reposent sur l’interface ; aucune trace HTTP ni capture destinée au dépôt n’a été enregistrée pour cette étape.
-
-## Vérifications à préparer
-
-1. Observer le parcours de récupération sur le compte A et relever les étapes, sans publier de lien de récupération.
-2. Pour CWE-352, choisir une action réversible sur le compte A, puis examiner la requête normale et les protections avant de définir un essai. Ne pas conclure à une faille sur la seule absence visible d’un jeton.
-3. Si le groupe retient un contrôle d’accès entre comptes, utiliser uniquement deux comptes de test maîtrisés et des objets créés pour l’essai. Aucun identifiant tiers ne doit être deviné ou parcouru.
-4. Consigner pour chaque essai : préconditions, action exacte, résultat attendu, résultat obtenu, preuve expurgée et limites. Ces essais restent à réaliser.

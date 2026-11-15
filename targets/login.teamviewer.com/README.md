@@ -2,6 +2,8 @@
 
 Ce répertoire regroupe le travail de reconnaissance et de vérification sur `login.teamviewer.com` réalisé dans un cadre pédagogique.
 
+[Suivre les captures et les résultats dans l’ordre](evidences/README.md).
+
 ## Organisation du dossier local
 
 - `fiche-cible.md` : cible et périmètre

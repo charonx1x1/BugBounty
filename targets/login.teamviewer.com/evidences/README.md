@@ -1,59 +1,79 @@
-# Figures de l’investigation TeamViewer
+# TeamViewer — parcours de lecture des preuves
 
-Les cadres rouges signalent les éléments à lire. Les masques opaques couvrent les données sensibles. Les légendes indiquent exactement ce que montre chaque capture.
+Ce dossier suit la démarche d’enquête. Les dates des essais figurent dans le [journal](../notes/journal.md). Les captures ont été recadrées et les données sensibles masquées.
 
-### Comparaison dans Burp Repeater
+1. [Repérer la cible et ses archives](#1-repérage-et-archives)
+2. [Observer la récupération et la session](#2-récupération-et-session)
+3. [Comparer les réponses Burp](#3-comparaison-dans-burp)
+4. [Lire les résultats des outils](#4-résultats-des-outils)
+5. [Conclure](#5-conclusion)
 
-![Réponse HTTP 403 dans Burp Repeater](burp-repeater-403-expurge.png)
+## 1. Repérage et archives
 
-*Figure 1 – En-tête absent lors de l’essai documenté. Burp affiche HTTP 403 Forbidden.*
+Commencer par la [fiche cible](../fiche-cible.md) pour identifier la console étudiée. Le [relevé de connexion](../notes/pistes-login.md) décrit les en-têtes du formulaire public. Les archives portent aussi sur d’autres domaines TeamViewer.
 
-![Réponse HTTP 200 dans Burp Repeater](figure-02-burp-200-reponse.png)
+![Résultats Wayback par domaine](sqlmap-wayback/wayback-01-recherche-domaines-code.png)
 
-*Figure 2 – Contrôle positif après rétablissement du jeton. Burp affiche HTTP 200 OK.*
+*Figure 1 – Résultats de la recherche d’archives par domaine. Les résultats vides sont propres à cette recherche.*
 
-Les figures sont recadrées sur le panneau Response. Le statut et les en-têtes non sensibles sont lisibles. Le corps du 200 reste visible. L’identifiant de trace et le corps du 403, qui contient un identifiant d’erreur, sont masqués. Les conditions des essais et l’effet sur le profil sont décrits dans le [relevé expurgé](comparaison-profil.md).
+Pour le détail des chemins et de l’extraction, voir les [captures Wayback légendées](sqlmap-wayback/README.md).
 
-### Demande de récupération
+## 2. Récupération et session
 
-![Message de confirmation affiché après la demande de récupération](recuperation-confirmation-expurge.png)
+![Confirmation de la demande de récupération](recuperation-confirmation-expurge.png)
 
-*Figure 3 – Demande de récupération traitée par l’interface. Le message annonce un courriel. Sa réception est documentée séparément dans le [journal](../notes/journal.md).*
-
-### Modification du profil
-
-![Nom initial affiché dans l’en-tête du compte](profil-nom-retabli-expurge.png)
-
-*Figure 4 – Nom initial « Projet test » visible après remise en état lors de l’essai de référence.*
-
-![Nom initial affiché dans les réglages du profil](profil-apres-controle-expurge.png)
-
-*Figure 5 – Profil ouvert après l’essai Safari. Le nom affiché reste « Projet test ». La capture ne suffit pas à établir un rejet HTTP.*
-
-Les réponses HTTP des essais Burp et l’effet sur le profil figurent dans le [relevé expurgé](comparaison-profil.md).
-
-### Observations réseau dans Safari
+*Figure 2 – Le site confirme la demande et annonce l’envoi d’un courriel. Sa réception est documentée dans le journal. Cette capture n’établit pas l’usage unique du lien.*
 
 ![Message de déconnexion et option de conservation du réseau](reseau-historique-active-expurge.png)
 
-*Figure 6 – « Conserver l’historique » est coché et le site affiche une déconnexion automatique. La cause de cette déconnexion reste inconnue.*
+*Figure 3 – Safari conserve l’historique réseau et TeamViewer affiche une déconnexion automatique. La cause n’est pas établie. L’essai distinct de révocation est décrit dans la [note de gestion des sessions](../notes/gestion-sessions.md).*
 
-[Capture de configuration de Burp](burp-conditions-expurge.png).
+## 3. Comparaison dans Burp
 
-### Sauvegarde normale dans Burp
+### Référence et vérification de l’état du profil
 
-![Ligne sélectionnée dans l’historique Burp et corps de sa réponse](figure-07-burp-sauvegarde-response.png)
+![Sauvegarde normale sélectionnée dans Burp et réponse JSON](figure-07-burp-sauvegarde-response.png)
 
-*Figure 7 – Deux extraits de la même capture Burp. En haut, le POST de sauvegarde du profil sélectionné affiche HTTP 200. En bas, sa réponse contient « Une erreur non spécifiée est survenue ». Le panneau de requête contenant les cookies a été écarté.*
+*Figure 4 – Deux extraits de la même capture Burp. La sauvegarde normale affiche HTTP 200 et un message JSON générique d’erreur. Le [relevé comparatif](comparaison-profil.md) documente le changement de nom observé séparément.*
 
-L’effet sur le profil est décrit séparément dans le [relevé expurgé](comparaison-profil.md).
+![Nom initial affiché après remise en état](profil-nom-retabli-expurge.png)
 
-### Captures complémentaires
+*Figure 5 – Le nom initial est visible après la remise en état de l’essai de référence.*
 
-[Relevés sqlmap et Wayback Machine](sqlmap-wayback/README.md).
+### Premier essai dans Safari
 
-### Recherche de paramètres avec Arjun
+![Profil après l’essai Safari](profil-apres-controle-expurge.png)
 
-![Sortie Arjun 2.2.7 avec six noms extraits et aucun paramètre découvert](arjun-resultat.png)
+*Figure 6 – Le profil affiche le nom initial après l’essai Safari. La trace disponible ne permet pas d’établir un rejet serveur pour cet essai.*
 
-*Arjun a extrait six noms candidats depuis la réponse. Le résultat final ne confirme aucun paramètre caché. Voir la [note d’analyse](../notes/recherche-parametres-arjun.md).*
+### Comparaison dans Burp Repeater
+
+| Condition | Réponse observée | État du profil |
+| --- | --- | --- |
+| Jeton invalide, première série | HTTP 403, relevé textuel | Nom inchangé |
+| En-tête absent, seconde série | HTTP 403, figure 7 | Nom inchangé |
+| Jeton valide rétabli, contrôle positif de la seconde série | HTTP 200, figure 8 | Nom modifié |
+
+![Réponse HTTP 403 dans Burp Repeater](burp-repeater-403-expurge.png)
+
+*Figure 7 – Réponse au contrôle sans en-tête du jeton. Burp affiche HTTP 403 Forbidden.*
+
+![Réponse HTTP 200 dans Burp Repeater](figure-02-burp-200-reponse.png)
+
+*Figure 8 – Contrôle positif après rétablissement du jeton. Burp affiche HTTP 200 OK et le message générique. Le changement visible du nom est consigné dans le [relevé comparatif](comparaison-profil.md).*
+
+## 4. Résultats des outils
+
+![Sortie Arjun et résultat final](arjun-resultat.png)
+
+*Figure 9 – Arjun extrait six noms candidats. Le résultat final ne confirme aucun paramètre caché. Voir la [note Arjun](../notes/recherche-parametres-arjun.md).*
+
+![Avertissement de limitation signalé par sqlmap](sqlmap-wayback/sqlmap-02-avertissement.png)
+
+*Figure 10 – sqlmap signale une limitation apparente. Cet extrait ne montre ni code HTTP ni résultat positif d’injection. Les statuts rapportés et les limites sont détaillés dans la [note sqlmap](../notes/analyse-sqlmap-rate-limiting-429.md).*
+
+Autres éléments disponibles : [initialisation sqlmap](sqlmap-wayback/sqlmap-01-redirection-301.png) et [configuration de Burp](burp-conditions-expurge.png).
+
+## 5. Conclusion
+
+Le contrôle du jeton a été observé sur la sauvegarde du profil. Les essais avec en-tête absent ou jeton invalide ont renvoyé HTTP 403 avec nom inchangé. Le contrôle positif a renvoyé HTTP 200 avec modification visible. Aucune faille CSRF ni injection SQL n’a été démontrée dans les conditions observées.

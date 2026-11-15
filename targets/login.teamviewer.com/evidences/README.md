@@ -12,7 +12,7 @@ Les cadres rouges signalent les éléments à lire. Les masques opaques couvrent
 
 *Figure 2 – Contrôle positif après rétablissement du jeton. Burp affiche HTTP 200 OK.*
 
-Les captures affichent les statuts. Les conditions des essais et l’effet sur le profil sont décrits dans le [relevé expurgé](comparaison-profil.md).
+Les figures sont recadrées sur le panneau Response. Le statut et les en-têtes non sensibles sont lisibles. Le corps du 200 reste visible. L’identifiant de trace et le corps du 403, qui contient un identifiant d’erreur, sont masqués. Les conditions des essais et l’effet sur le profil sont décrits dans le [relevé expurgé](comparaison-profil.md).
 
 ### Demande de récupération
 

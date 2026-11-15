@@ -1,6 +1,6 @@
 # Observation HTTP — modification du profil
 
-Cette note décrit le relevé initial dans Safari. Pour le résultat ultérieur du contrôle serveur, voir [la comparaison dans Burp](essai-jeton-invalide.md#comparaison-manuelle-dans-burp-repeater).
+Cette note décrit le relevé initial dans Safari. Pour le résultat ultérieur du contrôle serveur, voir la comparaison dans Burp.
 
 ## Conditions
 

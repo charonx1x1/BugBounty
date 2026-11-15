@@ -9,7 +9,7 @@ Analyse locale du HAR Safari de la réponse HTTP 200 de /LogOn et des ressources
 | HTML initial | Sept références de scripts extraites. Aucun attribut action de formulaire ni name de champ relevé par l’extraction. | L’interface rendue affiche les champs e-mail et mot de passe. L’HTML initial seul ne décrit pas le contrat de soumission. |
 | Scripts | Bundles de connexion, configuration JavaScript, traduction française et ressources de consentement visibles. | Les noms de fichiers ne suffisent pas à identifier leurs dépendances ou à établir une fuite de secrets. |
 | Bulletins TeamViewer | Les bulletins consultés couvrent notamment des clients et modules Remote Management. | Aucun des avis examinés n’a pu être rattaché au formulaire avec les preuves disponibles. |
-| Wayback Machine | La recherche dans les archives a relevé trois noms de paramètres GET historiques sur le site vitrine. | Aucun paramètre de connexion confirmé. [Fiche Wayback Machine](reconnaissance-wayback-machine.md) |
+| Wayback Machine | La recherche dans les archives a relevé trois noms de paramètres GET historiques sur le site vitrine. | Aucun paramètre de connexion confirmé. Fiche Wayback Machine |
 
 ## Couverture des vérifications
 

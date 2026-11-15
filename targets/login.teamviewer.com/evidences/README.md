@@ -12,7 +12,7 @@ Ce dossier suit la démarche d’enquête. Les captures ont été recadrées et 
 
 ## 1. Repérage et archives
 
-La [fiche cible](../fiche-cible.md) présente la console et le périmètre de l’enquête. Le [relevé de connexion](../notes/reperage/pistes-login.md) décrit les en-têtes du formulaire public. Les archives portent aussi sur d’autres domaines TeamViewer.
+La [fiche cible](../fiche-cible.md) présente la console et le périmètre de l’enquête. Le relevé de connexion décrit les en-têtes du formulaire public. Les archives portent aussi sur d’autres domaines TeamViewer.
 
 ![Résultats Wayback par domaine](sqlmap-wayback/wayback-01-recherche-domaines-code.png)
 

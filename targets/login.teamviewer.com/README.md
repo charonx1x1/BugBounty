@@ -14,13 +14,13 @@ L’analyse de la page de connexion a relevé jQuery 3.7.1 dans un fichier JavaS
 | Injection SQL | Les essais sqlmap sur le champ `UserName` n’ont confirmé aucune injection. Les refus HTTP 403 et la limitation signalée par les HTTP 429 réduisent la portée du résultat. | [Fiche sqlmap](notes/authentification/analyse-sqlmap-rate-limiting-429.md) |
 | XSS et WAF | Aucun essai XSS applicatif n’est documenté. La présence d’un WAF a été signalée par une heuristique de sqlmap et reste à confirmer. | [Couverture des vérifications](notes/reperage/technologies-login.md#couverture-des-vérifications) |
 
-[Fiche cible](fiche-cible.md) · [Technologies observées](notes/reperage/technologies-login.md) · [Recherche dans les archives](notes/reperage/reconnaissance-wayback-machine.md)
+[Fiche cible](fiche-cible.md) · [Technologies observées](notes/reperage/technologies-login.md)
 
 ## 2. Récupération du compte et sessions
 
 - **Récupération du compte.** Le courriel de récupération a été reçu et l’interface a confirmé la réinitialisation du mot de passe. [Journal de bord](notes/suivi/journal.md#réinitialisation-et-réouverture-du-lien)
 - **Révocation d’une session.** Safari est revenu à la page de connexion après révocation de sa session. La session Chrome utilisée pour la comparaison est restée connectée. [Fiche sur les sessions](notes/compte-et-sessions/gestion-sessions.md)
-- **Points encore ouverts.** La notification distincte après changement du mot de passe et le comportement de l’authentification à plusieurs facteurs restent à vérifier. [Fiche de suivi](notes/compte-et-sessions/notification-post-reinitialisation.md)
+- **Points encore ouverts.** La notification distincte après changement du mot de passe et le comportement de l’authentification à plusieurs facteurs restent à vérifier.
 
 ## 3. Sauvegarde du profil
 
@@ -45,5 +45,3 @@ Les captures présentent les groupes de deux comptes de test, A et B. Les consul
 - [Index des captures](evidences/README.md)
 - [Checklist de connexion](checklist-login.md)
 - [Journal de bord](notes/suivi/journal.md)
-- [Bilan et questions ouvertes](notes/suivi/cookies-et-bilan.md)
-- [Exercice Burp sur une réponse fictive](notes/profil/exercice-response-manipulation.md)

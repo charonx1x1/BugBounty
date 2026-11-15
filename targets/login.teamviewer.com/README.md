@@ -1,45 +1,48 @@
-# TeamViewer — dossier d’enquête
+# Enquête de sécurité sur la console TeamViewer
 
-L’enquête porte sur la connexion à `login.teamviewer.com`, la récupération du compte, la gestion des sessions la sauvegarde du profil et les contrôles d’autorisation des groupes. Les étapes ci-dessous relient chaque question aux fiches et aux captures correspondantes.
+L’enquête porte sur `login.teamviewer.com`. Elle suit le parcours d’un utilisateur, de la connexion à la gestion du profil, des sessions et des groupes. Les vérifications après connexion s’appuient sur des comptes de test.
 
-## Résultats principaux
+**Résultat général.** Aucune vulnérabilité n’a été confirmée dans les essais documentés. Le dossier décrit les comportements observés et les limites de chaque vérification.
 
-| Parcours | Résultat | Preuve |
+## 1. Repérage et connexion
+
+L’analyse de la page de connexion a relevé jQuery 3.7.1 dans un fichier JavaScript. La recherche dans les archives a retrouvé trois noms de paramètres historiques sur le site vitrine. Aucun paramètre de connexion n’a été confirmé par cette recherche.
+
+| Vérification | Résultat | Détail |
 | --- | --- | --- |
-| Sauvegarde du profil | Le nom est resté inchangé lors des refus HTTP 403. Le changement est apparu dans l’interface lors du contrôle positif, malgré le message d’erreur accompagnant le HTTP 200. | [Comparaison et captures](evidences/README.md#3-comparaison-dans-burp) |
-| Révocation d’une session | Après la révocation, Safari est revenu à la page de connexion. Chrome est resté connecté. | [Relevé de l’essai](notes/gestion-sessions.md) |
-| Récupération du compte | Le courriel de récupération a été reçu et l’interface a confirmé la réinitialisation du mot de passe. | [Journal de bord](notes/journal.md#réinitialisation-et-réouverture-du-lien) |
+| Paramètres cachés | Arjun a relevé six noms candidats et n’a confirmé aucun paramètre caché. | [Fiche Arjun](notes/recherche-parametres-arjun.md) |
+| Injection SQL | Les essais sqlmap sur le champ `UserName` n’ont confirmé aucune injection. Les refus HTTP 403 et la limitation signalée par les HTTP 429 réduisent la portée du résultat. | [Fiche sqlmap](notes/analyse-sqlmap-rate-limiting-429.md) |
+| XSS et WAF | Aucun essai XSS applicatif n’est documenté. La présence d’un WAF a été signalée par une heuristique de sqlmap et reste à confirmer. | [Couverture des vérifications](notes/technologies-login.md#couverture-des-vérifications) |
 
-## 1. Périmètre et repérage
+[Fiche cible](fiche-cible.md) · [Technologies observées](notes/technologies-login.md) · [Recherche dans les archives](notes/reconnaissance-wayback-machine.md)
 
-- [Fiche cible](fiche-cible.md) — périmètre, compte de test et parcours visibles.
-- [Checklist de connexion](checklist-login.md) — état des vérifications.
-- [Technologies et avis de sécurité](notes/technologies-login.md), [recherche dans les archives](notes/reconnaissance-wayback-machine.md) et [analyse du Referer](notes/referer-dependances.md) — indices relevés autour de la page publique. Les résultats d’archives concernent surtout le site vitrine. [Voir la figure 1](evidences/README.md#1-repérage-et-archives).
+## 2. Récupération du compte et sessions
 
-## 2. Connexion et cycle de vie du compte
-
-- [Vue d’ensemble des parcours](notes/pistes-login.md), [réponses liées au CAPTCHA](notes/analyse-authentification-captcha.md) et [cookies avant connexion](notes/cookies-avant-connexion.md) — observations sur le formulaire public.
-- [Interface après connexion](notes/cartographie-authentifiee.md) et [attributs des cookies d’authentification](notes/securite-cookies.md) — observations avec le compte de test.
-- [Notification après réinitialisation](notes/notification-post-reinitialisation.md), [révocation de session](notes/gestion-sessions.md) et [cache après déconnexion](notes/cache-apres-deconnexion.md) — le courriel de récupération est documenté. La notification distincte après changement et la MFA restent indéterminées. [Voir les figures 2 et 3](evidences/README.md#2-récupération-et-session).
+- **Récupération du compte.** Le courriel de récupération a été reçu et l’interface a confirmé la réinitialisation du mot de passe. [Journal de bord](notes/journal.md#réinitialisation-et-réouverture-du-lien)
+- **Révocation d’une session.** Safari est revenu à la page de connexion après révocation de sa session. La session Chrome utilisée pour la comparaison est restée connectée. [Fiche sur les sessions](notes/gestion-sessions.md)
+- **Points encore ouverts.** La notification distincte après changement du mot de passe et le comportement de l’authentification à plusieurs facteurs restent à vérifier. [Fiche de suivi](notes/notification-post-reinitialisation.md)
 
 ## 3. Sauvegarde du profil
 
-Le [relevé HTTP](notes/observation-http-profil.md) décrit la sauvegarde normale. La [comparaison des essais](evidences/comparaison-profil.md) présente les réponses et l’état du profil. Les essais avec jeton absent ou invalide ont renvoyé HTTP 403 avec un nom inchangé. Le contrôle positif a renvoyé HTTP 200 avec un message générique d’erreur. L’interface a affiché le changement de nom. [Voir les figures 4 à 8](evidences/README.md#3-comparaison-dans-burp).
+La vérification a comparé la réponse HTTP et le nom réellement affiché dans le profil.
 
-[Fiche détaillée sur le jeton invalide](notes/essai-jeton-invalide.md)
+| Cas observé | Réponse HTTP | État du profil |
+| --- | --- | --- |
+| Jeton absent ou invalide | HTTP 403 | Nom inchangé |
+| Sauvegarde avec le compte de test | HTTP 200 accompagné d’un message d’erreur | Nouveau nom affiché dans le profil |
 
-## 4. Résultats des outils de connexion
+La seconde ligne montre un décalage entre le message renvoyé et le résultat visible de la sauvegarde. [Comparaison et captures](evidences/comparaison-profil.md) · [Relevé de la sauvegarde](notes/observation-http-profil.md)
 
-La [fiche Arjun](notes/recherche-parametres-arjun.md) distingue les noms candidats du résultat final. La [fiche sqlmap](notes/analyse-sqlmap-rate-limiting-429.md) décrit la limitation rencontrée et ses effets sur l’interprétation. Aucun paramètre caché ni aucune injection SQL n’a été confirmé par ces essais. [Voir les figures 9 et 10](evidences/README.md#4-résultats-des-outils).
+## 4. Autorisation des groupes
 
-## 5. Autorisation des groupes
+Les captures présentent les groupes de deux comptes de test, A et B. Les consultations normales ont renvoyé les données du groupe ou des listes de partage vides. Les autres essais documentés ont donné un HTTP 403 ou un HTTP 200 accompagné d’une erreur applicative (`s: 0`). Les réponses d’erreur ne montrent aucune donnée du groupe visé. Aucun accès intercompte non autorisé de type IDOR/BOLA n’a été confirmé.
 
-Les captures montrent les groupes de deux comptes de test, des réponses normales et des essais ayant renvoyé un refus HTTP 403 ou une erreur applicative. [Fiche de l’investigation](notes/autorisation-groupes.md)
+[Fiche sur les groupes et liens vers les preuves](notes/autorisation-groupes.md) · [Captures expurgées](evidences/groupes/)
 
-## 6. Bilan
+## 5. Pièces du dossier
 
-La comparaison du profil associe chaque réponse HTTP à un état visible du compte. L’essai de révocation compare deux sessions ouvertes en parallèle. Le [bilan des vérifications](notes/cookies-et-bilan.md) réunit les résultats et les questions encore ouvertes. Aucune vulnérabilité n’a été confirmée.
-
-[Journal de bord](notes/journal.md) · [Couverture de l’enquête](notes/prochaines-etapes.md) · [Exercice Burp sur une réponse fictive](notes/exercice-response-manipulation.md)
-
-[Voir toutes les captures dans l’ordre](evidences/README.md)
+- [Index des captures](evidences/README.md)
+- [Checklist de connexion](checklist-login.md)
+- [Journal de bord](notes/journal.md)
+- [Bilan et questions ouvertes](notes/cookies-et-bilan.md)
+- [Exercice Burp sur une réponse fictive](notes/exercice-response-manipulation.md)

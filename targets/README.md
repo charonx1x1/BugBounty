@@ -1,5 +1,7 @@
 # Cibles
 
+[Lire le dossier d’enquête TeamViewer](login.teamviewer.com/README.md).
+
 Un dossier par hôte ou par application. Créé automatiquement :
 
 ```bash

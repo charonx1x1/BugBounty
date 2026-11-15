@@ -2,6 +2,8 @@
 
 Ce dossier suit la démarche d’enquête. Les captures ont été recadrées et les données sensibles masquées.
 
+[Revenir au parcours des fiches](../README.md).
+
 1. [Repérer la cible et ses archives](#1-repérage-et-archives)
 2. [Observer la récupération et la session](#2-récupération-et-session)
 3. [Comparer les réponses Burp](#3-comparaison-dans-burp)

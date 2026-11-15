@@ -29,7 +29,7 @@ Secure limite la transmission du cookie à HTTPS ; HttpOnly empêche sa lecture 
 | Requête du profil | Jeton d’origine : HTTP 200 et nom modifié ; jeton invalide ou absent : HTTP 403 et nom inchangé | Contrôle du jeton observé dans ce scénario ; aucune exploitation inter-origines démontrée |
 | Cookies | Attributs ci-dessus relevés | Défenses présentes ; aucun contournement démontré |
 
-La [comparaison dans Burp](essai-jeton-invalide.md#comparaison-manuelle-dans-burp-repeater) associe le statut HTTP à l’état visible du profil. Ce contrôle porte sur la sauvegarde du nom. Aucune vulnérabilité n’a été confirmée.
+La [comparaison dans Burp](../profil/essai-jeton-invalide.md#comparaison-manuelle-dans-burp-repeater) associe le statut HTTP à l’état visible du profil. Ce contrôle porte sur la sauvegarde du nom. Aucune vulnérabilité n’a été confirmée.
 
 ## Dernier état observé
 

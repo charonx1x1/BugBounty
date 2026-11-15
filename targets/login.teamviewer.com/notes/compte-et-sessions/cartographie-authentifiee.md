@@ -1,6 +1,6 @@
 # Cartographie après connexion
 
-Cette cartographie correspond au repérage initial. Les essais ultérieurs sont suivis dans [le journal](journal.md) et [le bilan](cookies-et-bilan.md).
+Cette cartographie correspond au repérage initial. Les essais ultérieurs sont suivis dans [le journal](../suivi/journal.md) et [le bilan](../suivi/cookies-et-bilan.md).
 
 ## Conditions et méthode
 

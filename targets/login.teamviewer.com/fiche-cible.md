@@ -39,6 +39,6 @@ Les liens `#lost-password` et `#register` donnent accès à des parties de l’i
 
 ## État des vérifications
 
-Les parcours authentifiés, la récupération du mot de passe et les cookies ont été observés. Le test du jeton invalide sur la sauvegarde du profil a obtenu HTTP 403, avec un nom inchangé. Aucune vulnérabilité confirmée. Voir [le bilan](notes/cookies-et-bilan.md) et [la fiche de test](notes/essai-jeton-invalide.md).
+Les parcours authentifiés, la récupération du mot de passe et les cookies ont été observés. Le test du jeton invalide sur la sauvegarde du profil a obtenu HTTP 403, avec un nom inchangé. Aucune vulnérabilité confirmée. Voir [le bilan](notes/suivi/cookies-et-bilan.md) et [la fiche de test](notes/profil/essai-jeton-invalide.md).
 
 Source du périmètre : [programme officiel TeamViewer sur YesWeHack](https://yeswehack.com/programs/teamviewer-bounty-program).

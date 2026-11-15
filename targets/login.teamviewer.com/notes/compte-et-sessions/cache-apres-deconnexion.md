@@ -15,4 +15,4 @@ Les trois réponses relevées incluent une consigne de non-stockage HTTP. Les pr
 
 **Verdict actuel.** Consigne de non-stockage observée sur les réponses listées. Comportement du profil dans l’historique après déconnexion indéterminé. Aucun nouvel essai exécuté pour cette fiche.
 
-[Capture de la connexion](pistes-login.md) · [Relevé HTTP du profil](observation-http-profil.md)
+[Capture de la connexion](../reperage/pistes-login.md) · [Relevé HTTP du profil](../profil/observation-http-profil.md)

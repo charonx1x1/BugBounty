@@ -48,7 +48,7 @@ Ce scénario porte sur la sauvegarde du profil. Le contrôle CSRF de la connexio
 
 **Bilan actuel :** le parcours de connexion normal est documenté. La protection du profil par le jeton a été observée dans les variantes étudiées. Aucune vulnérabilité de connexion ou CSRF n’a été démontrée.
 
-[Journal](notes/journal.md) · [Cookies et bilan](notes/cookies-et-bilan.md) · [Comparaison du jeton](notes/essai-jeton-invalide.md) · [Preuve expurgée](evidences/comparaison-profil.md)
+[Journal](notes/suivi/journal.md) · [Cookies et bilan](notes/suivi/cookies-et-bilan.md) · [Comparaison du jeton](notes/profil/essai-jeton-invalide.md) · [Preuve expurgée](evidences/comparaison-profil.md)
 
 ## Matrice de validation avancée
 
@@ -82,4 +82,4 @@ Ce scénario porte sur la sauvegarde du profil. Le contrôle CSRF de la connexio
 - [x] Vérifier la CSP complète : form-action, base-uri et frame-ancestors sont absentes de la réponse 200 relevée.
 - [x] Relever les hôtes, méthodes, statuts et métadonnées des deux POST reCAPTCHA. La nature des valeurs transmises reste indéterminée.
 
-[Relevés et limites](notes/pistes-login.md#réponse-normale-du-formulaire-dans-safari)
+[Relevés et limites](notes/reperage/pistes-login.md#réponse-normale-du-formulaire-dans-safari)

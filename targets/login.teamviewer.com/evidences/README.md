@@ -12,7 +12,7 @@ Ce dossier suit la démarche d’enquête. Les captures ont été recadrées et 
 
 ## 1. Repérage et archives
 
-La [fiche cible](../fiche-cible.md) présente la console et le périmètre de l’enquête. Le [relevé de connexion](../notes/pistes-login.md) décrit les en-têtes du formulaire public. Les archives portent aussi sur d’autres domaines TeamViewer.
+La [fiche cible](../fiche-cible.md) présente la console et le périmètre de l’enquête. Le [relevé de connexion](../notes/reperage/pistes-login.md) décrit les en-têtes du formulaire public. Les archives portent aussi sur d’autres domaines TeamViewer.
 
 ![Résultats Wayback par domaine](sqlmap-wayback/wayback-01-recherche-domaines-code.png)
 
@@ -28,7 +28,7 @@ Pour le détail des chemins et de l’extraction, voir les [captures Wayback lé
 
 ![Message de déconnexion et option de conservation du réseau](reseau-historique-active-expurge.png)
 
-*Figure 3 – Safari conserve l’historique réseau et TeamViewer affiche une déconnexion automatique. La cause n’est pas établie. L’essai distinct de révocation est décrit dans la [note de gestion des sessions](../notes/gestion-sessions.md).*
+*Figure 3 – Safari conserve l’historique réseau et TeamViewer affiche une déconnexion automatique. La cause n’est pas établie. L’essai distinct de révocation est décrit dans la [note de gestion des sessions](../notes/compte-et-sessions/gestion-sessions.md).*
 
 ## 3. Comparaison dans Burp
 
@@ -68,11 +68,11 @@ Pour le détail des chemins et de l’extraction, voir les [captures Wayback lé
 
 ![Sortie Arjun et résultat final](arjun-resultat.png)
 
-*Figure 9 – Arjun extrait six noms candidats. Le résultat final ne confirme aucun paramètre caché. Voir la [note Arjun](../notes/recherche-parametres-arjun.md).*
+*Figure 9 – Arjun extrait six noms candidats. Le résultat final ne confirme aucun paramètre caché. Voir la [note Arjun](../notes/authentification/recherche-parametres-arjun.md).*
 
 ![Avertissement de limitation signalé par sqlmap](sqlmap-wayback/sqlmap-02-avertissement.png)
 
-*Figure 10 – sqlmap signale une limitation apparente. Cet extrait ne montre ni code HTTP ni résultat positif d’injection. Les statuts rapportés et les limites sont détaillés dans la [note sqlmap](../notes/analyse-sqlmap-rate-limiting-429.md).*
+*Figure 10 – sqlmap signale une limitation apparente. Cet extrait ne montre ni code HTTP ni résultat positif d’injection. Les statuts rapportés et les limites sont détaillés dans la [note sqlmap](../notes/authentification/analyse-sqlmap-rate-limiting-429.md).*
 
 Autres éléments disponibles : [initialisation sqlmap](sqlmap-wayback/sqlmap-01-redirection-301.png) et [configuration de Burp](burp-conditions-expurge.png).
 

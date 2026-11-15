@@ -34,7 +34,7 @@ Content-Type: text/html; charset=utf-8
 
 ## Conclusion et limites
 
-Défense observée dans ce scénario ; aucune faille CSRF démontrée. La comparaison ne teste pas une requête issue d’un site tiers. Voir [le protocole et ses limites](../notes/essai-jeton-invalide.md). Les captures contenant des secrets ne sont pas publiées.
+Défense observée dans ce scénario ; aucune faille CSRF démontrée. La comparaison ne teste pas une requête issue d’un site tiers. Voir [le protocole et ses limites](../notes/profil/essai-jeton-invalide.md). Les captures contenant des secrets ne sont pas publiées.
 
 
 ## Complément : en-tête absent

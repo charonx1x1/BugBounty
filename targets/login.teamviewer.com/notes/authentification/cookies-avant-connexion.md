@@ -10,4 +10,4 @@ Analyse des en-têtes Set-Cookie présents dans le HAR Safari du chargement de /
 
 Les six émissions portent Secure et cinq portent HttpOnly. Les quatre émissions déclarant SameSite=None portent aussi Secure. Le rôle du cookie sans HttpOnly reste inconnu. L’absence de SameSite explicite ne permet pas de déduire la politique effective appliquée par Safari.
 
-**Limites.** Un en-tête Set-Cookie témoigne d’une émission. Il ne prouve ni l’acceptation par le navigateur ni l’envoi lors d’une requête ultérieure. Le relevé couvre la page avant connexion. Les cookies authentifiés sont traités dans un [relevé distinct](cookies-et-bilan.md). Aucun défaut exploitable établi par cette analyse.
+**Limites.** Un en-tête Set-Cookie témoigne d’une émission. Il ne prouve ni l’acceptation par le navigateur ni l’envoi lors d’une requête ultérieure. Le relevé couvre la page avant connexion. Les cookies authentifiés sont traités dans un [relevé distinct](../suivi/cookies-et-bilan.md). Aucun défaut exploitable établi par cette analyse.

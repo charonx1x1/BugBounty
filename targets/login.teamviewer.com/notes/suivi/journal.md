@@ -30,7 +30,7 @@ Le parcours d’inscription, de vérification de l’adresse et de connexion a �
 
 La gestion des utilisateurs propose un essai professionnel ; les scripts sont annoncés comme absents du forfait. La liste des sessions ne présente aucune donnée avec les filtres affichés. Aucun paramètre de sécurité n’a été modifié pendant ce repérage.
 
-Les observations et leurs limites figurent dans [la cartographie authentifiée](cartographie-authentifiee.md). Aucune vulnérabilité n’est confirmée à ce stade.
+Les observations et leurs limites figurent dans [la cartographie authentifiée](../compte-et-sessions/cartographie-authentifiee.md). Aucune vulnérabilité n’est confirmée à ce stade.
 
 ## Observation du formulaire de récupération
 
@@ -58,7 +58,7 @@ Le même lien de récupération a ensuite été rouvert une fois depuis le messa
 
 ## Observation HTTP du profil
 
-Une soumission de connexion a abouti à la console après une vérification automatique anti-robot. Une modification réversible du nom a été observée avec l’inspecteur réseau Safari, puis le nom initial a été rétabli. Voir [le relevé HTTP du profil](observation-http-profil.md) pour la requête, les en-têtes, les particularités de la réponse et les limites. Aucun test de contournement CSRF n’a été réalisé.
+Une soumission de connexion a abouti à la console après une vérification automatique anti-robot. Une modification réversible du nom a été observée avec l’inspecteur réseau Safari, puis le nom initial a été rétabli. Voir [le relevé HTTP du profil](../profil/observation-http-profil.md) pour la requête, les en-têtes, les particularités de la réponse et les limites. Aucun test de contournement CSRF n’a été réalisé.
 
 ## Attributs des cookies
 
@@ -66,7 +66,7 @@ Lecture du stockage Safari sans modification. `.ASPXAUTH` est affiché Secure, H
 
 ## Essai ciblé avec un jeton invalide
 
-Une substitution locale Safari a été configurée pour remplacer l’en-tête du profil par `test-invalide`, puis une sauvegarde sans changement du nom a été déclenchée. La navigation a empêché de conserver les détails réseau de l’essai. Résultat non concluant : aucun refus ni contournement démontré. La substitution a été supprimée et le nom « Projet test » vérifié. Voir [le compte rendu de l’essai](essai-jeton-invalide.md).
+Une substitution locale Safari a été configurée pour remplacer l’en-tête du profil par `test-invalide`, puis une sauvegarde sans changement du nom a été déclenchée. La navigation a empêché de conserver les détails réseau de l’essai. Résultat non concluant : aucun refus ni contournement démontré. La substitution a été supprimée et le nom « Projet test » vérifié. Voir [le compte rendu de l’essai](../profil/essai-jeton-invalide.md).
 
 ## Préparation de la reprise du contrôle
 
@@ -74,7 +74,7 @@ L’option « Conserver l’historique » du panneau Réseau Safari a été acti
 
 ## Reprise du contrôle avec trace conservée
 
-Reconnexion réussie. La nouvelle tentative avec substitution locale a produit une erreur de chargement sans statut HTTP, et la trace affichait encore le jeton d’origine. Le test reste non concluant. La substitution a été supprimée et le nom initial vérifié après rechargement. Voir [les détails et limites](essai-jeton-invalide.md).
+Reconnexion réussie. La nouvelle tentative avec substitution locale a produit une erreur de chargement sans statut HTTP, et la trace affichait encore le jeton d’origine. Le test reste non concluant. La substitution a été supprimée et le nom initial vérifié après rechargement. Voir [les détails et limites](../profil/essai-jeton-invalide.md).
 
 ## Préparation du contrôle dans Burp Community
 
@@ -87,9 +87,9 @@ La requête de sauvegarde et sa réponse n’ont pas pu être vérifiées dans l
 
 ## Résultat du contrôle manuel dans Burp
 
-Les captures et réponses relevées pendant le contrôle manuel montrent qu’un rejeu du profil avec le jeton d’origine renvoie HTTP 200 et affiche le nom « Projet test A ». Après restauration du nom initial, le même scénario avec l’en-tête réglé à `test-invalide` renvoie HTTP 403 ; le nom affiché reste « Projet test ». Défense observée sur cette requête, sans vulnérabilité CSRF démontrée. Voir [la comparaison et ses limites](essai-jeton-invalide.md#comparaison-manuelle-dans-burp-repeater). Les essais Safari antérieurs restent non concluants.
+Les captures et réponses relevées pendant le contrôle manuel montrent qu’un rejeu du profil avec le jeton d’origine renvoie HTTP 200 et affiche le nom « Projet test A ». Après restauration du nom initial, le même scénario avec l’en-tête réglé à `test-invalide` renvoie HTTP 403 ; le nom affiché reste « Projet test ». Défense observée sur cette requête, sans vulnérabilité CSRF démontrée. Voir [la comparaison et ses limites](../profil/essai-jeton-invalide.md#comparaison-manuelle-dans-burp-repeater). Les essais Safari antérieurs restent non concluants.
 
 
 ## Complément : en-tête absent
 
-Le rejeu sans en-tête de jeton a obtenu HTTP 403 et un nom inchangé. Le rétablissement d’un jeton valide, avec les mêmes cookies dans les requêtes fournies, a obtenu HTTP 200 et le nom « Projet test A ». Ce contrôle positif renforce l’attribution du rejet à l’absence de l’en-tête. Voir [le complément de la fiche](essai-jeton-invalide.md#complément--en-tête-absent-et-contrôle-positif). Le nettoyage final et la déconnexion restent à confirmer ; aucune nouvelle requête n’a été envoyée pour rédiger cette note.
+Le rejeu sans en-tête de jeton a obtenu HTTP 403 et un nom inchangé. Le rétablissement d’un jeton valide, avec les mêmes cookies dans les requêtes fournies, a obtenu HTTP 200 et le nom « Projet test A ». Ce contrôle positif renforce l’attribution du rejet à l’absence de l’en-tête. Voir [le complément de la fiche](../profil/essai-jeton-invalide.md#complément--en-tête-absent-et-contrôle-positif). Le nettoyage final et la déconnexion restent à confirmer ; aucune nouvelle requête n’a été envoyée pour rédiger cette note.

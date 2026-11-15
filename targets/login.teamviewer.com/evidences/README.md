@@ -1,12 +1,29 @@
-# Captures expurgées
+# Figures de l’investigation TeamViewer
 
-| Capture | Ce qu’elle documente |
-| --- | --- |
-| [Confirmation de récupération](recuperation-confirmation-expurge.png) | Confirmation de la demande par l’interface. La réception du courriel est documentée dans le journal. |
-| [Profil après contrôle](profil-apres-controle-expurge.png) | Nom initial affiché après l’essai Safari. |
-| [Nom rétabli](profil-nom-retabli-expurge.png) | Nom initial visible après la modification de référence. |
-| [Historique réseau Safari](reseau-historique-active-expurge.png) | Option « Conserver l’historique » et message de déconnexion automatique. La cause de cette déconnexion reste inconnue. |
-| [Configuration de Burp](burp-conditions-expurge.png) | Écran de configuration de l’outil. |
-| [Comparaison du profil](comparaison-profil.md) | Relevé expurgé des réponses HTTP et des effets observés. |
+Les cadres rouges signalent les éléments à lire. Les masques opaques couvrent les données sensibles. Les légendes indiquent exactement ce que montre chaque capture.
 
-Les masques opaques sont intégrés aux PNG. Les fichiers originaux restent locaux.
+### Demande de récupération
+
+![Message de confirmation affiché après la demande de récupération](recuperation-confirmation-expurge.png)
+
+*Figure 1 – Demande de récupération traitée par l’interface. Le message annonce un courriel. Sa réception est documentée séparément dans le [journal](../notes/journal.md).*
+
+### Modification du profil
+
+![Nom initial affiché dans l’en-tête du compte](profil-nom-retabli-expurge.png)
+
+*Figure 2 – Nom initial « Projet test » visible après remise en état lors de l’essai de référence.*
+
+![Nom initial affiché dans les réglages du profil](profil-apres-controle-expurge.png)
+
+*Figure 3 – Profil ouvert après l’essai Safari. Le nom affiché reste « Projet test ». La capture ne suffit pas à établir un rejet HTTP.*
+
+Les réponses HTTP des essais Burp et l’effet sur le profil figurent dans le [relevé expurgé](comparaison-profil.md).
+
+### Observations réseau dans Safari
+
+![Message de déconnexion et option de conservation du réseau](reseau-historique-active-expurge.png)
+
+*Figure 4 – « Conserver l’historique » est coché et le site affiche une déconnexion automatique. La cause de cette déconnexion reste inconnue.*
+
+[Capture de configuration de Burp](burp-conditions-expurge.png).

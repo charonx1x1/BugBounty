@@ -1,6 +1,6 @@
 # TeamViewer — dossier d’enquête
 
-L’enquête porte sur la connexion à `login.teamviewer.com`, la récupération du compte, la gestion des sessions et la sauvegarde du profil. Les étapes ci-dessous relient chaque question aux fiches et aux captures correspondantes.
+L’enquête porte sur la connexion à `login.teamviewer.com`, la récupération du compte, la gestion des sessions la sauvegarde du profil et les contrôles d’autorisation des groupes. Les étapes ci-dessous relient chaque question aux fiches et aux captures correspondantes.
 
 ## Résultats principaux
 
@@ -32,7 +32,11 @@ Le [relevé HTTP](notes/observation-http-profil.md) décrit la sauvegarde normal
 
 La [fiche Arjun](notes/recherche-parametres-arjun.md) distingue les noms candidats du résultat final. La [fiche sqlmap](notes/analyse-sqlmap-rate-limiting-429.md) décrit la limitation rencontrée et ses effets sur l’interprétation. Aucun paramètre caché ni aucune injection SQL n’a été confirmé par ces essais. [Voir les figures 9 et 10](evidences/README.md#4-résultats-des-outils).
 
-## 5. Bilan
+## 5. Autorisation des groupes
+
+Les captures montrent les groupes de deux comptes de test, des réponses normales et des essais ayant renvoyé un refus HTTP 403 ou une erreur applicative. [Fiche de l’investigation](notes/autorisation-groupes.md)
+
+## 6. Bilan
 
 La comparaison du profil associe chaque réponse HTTP à un état visible du compte. L’essai de révocation compare deux sessions ouvertes en parallèle. Le [bilan des vérifications](notes/cookies-et-bilan.md) réunit les résultats et les questions encore ouvertes. Aucune vulnérabilité n’a été confirmée.
 

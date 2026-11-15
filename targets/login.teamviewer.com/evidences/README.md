@@ -8,7 +8,7 @@ Les cadres rouges signalent les éléments à lire. Les masques opaques couvrent
 
 *Figure 1 – En-tête absent lors de l’essai documenté. Burp affiche HTTP 403 Forbidden.*
 
-![Réponse HTTP 200 dans Burp Repeater](burp-repeater-200-expurge.png)
+![Réponse HTTP 200 dans Burp Repeater](figure-02-burp-200-reponse.png)
 
 *Figure 2 – Contrôle positif après rétablissement du jeton. Burp affiche HTTP 200 OK.*
 

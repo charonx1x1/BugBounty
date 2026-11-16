@@ -1,7 +1,22 @@
-# Périmètre AUTORISÉ — programme : <nom>
-# Source : <url de la policy>   Dernière vérification : AAAA-MM-JJ
+# Programme : TeamViewer - Bounty Program
+# Source : https://yeswehack.com/programs/teamviewer-bounty-program
+# Vérification : 2026-11-11
+
+# Applications web explicitement autorisées
+web.teamviewer.com
+account.teamviewer.com
+login.teamviewer.com
+
+# Autres applications officiellement incluses dans le programme :
+# TeamViewer Remote desktop client
+# TeamViewer Remote Control (Android / iOS)
+# TeamViewer QuickSupport (Android / iOS)
+# TeamViewer Host (Android)
 #
-# Exemples (à supprimer) :
-# *.exemple.com
-# api.exemple.com
-# exemple.fr
+# Les applications mobiles et desktop sont documentées
+# dans la politique officielle, mais ne sont pas ajoutées
+# comme domaines web autorisés dans ce fichier.
+#
+# Certains services backend directement utilisés par les
+# clients sont couverts selon la politique officielle.
+# Vérifier leur appartenance au scope avant tout test.
